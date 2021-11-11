@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/table.png-71c3b25d8fc84c5efb3f019d06186358.stex"
+path="res://.import/littersmall2.png-d8cb5027b158f43699e5b839faaa8ba5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Environment/table.png"
-dest_files=[ "res://.import/table.png-71c3b25d8fc84c5efb3f019d06186358.stex" ]
+source_file="res://Assets/Objects/littersmall2.png"
+dest_files=[ "res://.import/littersmall2.png-d8cb5027b158f43699e5b839faaa8ba5.stex" ]
 
 [params]
 

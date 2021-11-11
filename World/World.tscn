@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
+[ext_resource path="res://Objects/Table.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/LitterPile.tscn" type="PackedScene" id=3]
 
 [node name="World" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource( 2 )]
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 174.095, 116.657 )
+
+[node name="Table" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 49.4235, 105.526 )
+
+[node name="LitterPile" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 31.8565, 175.563 )
