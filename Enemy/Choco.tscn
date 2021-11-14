@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/Enemy/choco2.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Enemy/choco1.png" type="Texture" id=2]
+[ext_resource path="res://Enemy/Choco.gd" type="Script" id=3]
+[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 11.1236, 4.27704 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 12.7322, 17.6637 )
+
+[node name="Choco" type="KinematicBody2D"]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1.10243, 14.0166 )
+shape = SubResource( 2 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 4 )]
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource( 3 )
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+
+[editable path="Hurtbox"]
