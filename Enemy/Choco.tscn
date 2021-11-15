@@ -16,14 +16,17 @@ animations = [ {
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 11.1236, 4.27704 )
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 12.7322, 17.6637 )
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 12.1022
 
 [node name="Choco" type="KinematicBody2D"]
+collision_layer = 16
+collision_mask = 3
 script = ExtResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -31,6 +34,7 @@ position = Vector2( 1.10243, 14.0166 )
 shape = SubResource( 2 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 4 )]
+collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource( 3 )

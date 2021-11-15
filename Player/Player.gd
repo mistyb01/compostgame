@@ -17,12 +17,14 @@ var velocity = Vector2.ZERO
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
+onready var hitbox = $HitboxPivot/Hitbox
 
 # player movement
 # delta contains the time it took for the last frame to process
 # whenever you have something that changes over time, multiply it by delta
 func _ready():
 	animationTree.active = true
+	hitbox.knockback_vector = Vector2.LEFT
 	
 func _process(delta):
 	# 'match' is like switch statements
@@ -41,6 +43,7 @@ func move_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		hitbox.knockback_vector = input_vector
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Walk/blend_position", input_vector)
 		animationTree.set("parameters/Attack/blend_position", input_vector)
