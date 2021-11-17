@@ -14,7 +14,7 @@ _data = {
 
 [node name="World" type="Node2D"]
 script = ExtResource( 8 )
-Enemy = ExtResource( 4 )
+Enemy = [ ExtResource( 4 ) ]
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -55,5 +55,11 @@ curve = SubResource( 1 )
 [node name="SpawnPoint" type="PathFollow2D" parent="SpawnPath"]
 position = Vector2( 25.3757, 162.515 )
 rotation = -1.5708
+
+[node name="max_point" type="Position2D" parent="."]
+position = Vector2( 383.028, 37.8403 )
+
+[node name="min_point" type="Position2D" parent="."]
+position = Vector2( 387.233, 318.7 )
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]

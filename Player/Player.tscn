@@ -78,7 +78,6 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "AttackFront"
 length = 0.2
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -524,7 +523,7 @@ __meta__ = {
 position = Vector2( -7.96752, 11.6889 )
 texture = ExtResource( 1 )
 hframes = 20
-frame = 14
+frame = 13
 __meta__ = {
 "_edit_group_": true
 }
@@ -563,7 +562,7 @@ collision_mask = 8
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="PlayerHitbox" index="0"]
-position = Vector2( -26.7916, 26.3093 )
+position = Vector2( 23.2101, 29.0218 )
 rotation = 1.5708
 shape = SubResource( 37 )
 disabled = true
