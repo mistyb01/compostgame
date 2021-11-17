@@ -17,7 +17,7 @@ var velocity = Vector2.ZERO
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
 onready var animationState = animationTree.get("parameters/playback")
-onready var hitbox = $HitboxPivot/PlayerHitbox
+onready var hitbox = $PlayerHitbox
 
 # player movement
 # delta contains the time it took for the last frame to process

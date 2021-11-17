@@ -1,7 +1,8 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://Assets/Player/chara-spritesheet-2.png" type="Texture" id=1]
 [ext_resource path="res://Player/PlayerHitbox.gd" type="Script" id=2]
+[ext_resource path="res://Player/PickupManager.gd" type="Script" id=3]
 [ext_resource path="res://Player/Player.gd" type="Script" id=13]
 [ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=14]
 
@@ -38,19 +39,19 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("HitboxPivot:position")
+tracks/2/path = NodePath("PlayerHitbox/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1.93979, -28.9943 ) ]
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/3/path = NodePath("PlayerHitbox/CollisionShape2D:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -59,19 +60,19 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 90.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("PlayerHitbox/CollisionShape2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -26.7916, 26.3093 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -105,19 +106,19 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("HitboxPivot:position")
+tracks/2/path = NodePath("PlayerHitbox/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -1.18921, 20.2278 ) ]
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/3/path = NodePath("PlayerHitbox/CollisionShape2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -126,19 +127,19 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Vector2( 23.2101, 29.0218 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("PlayerHitbox/CollisionShape2D:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 90.0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -171,19 +172,19 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/2/path = NodePath("PlayerHitbox/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 90.0 ]
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("HitboxPivot:position")
+tracks/3/path = NodePath("PlayerHitbox/CollisionShape2D:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -192,19 +193,19 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -20.9003, 5.19392 ) ]
+"values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("PlayerHitbox/CollisionShape2D:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.71726, 54.7066 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -237,19 +238,19 @@ tracks/1/keys = {
 } ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("HitboxPivot:position")
+tracks/2/path = NodePath("PlayerHitbox/CollisionShape2D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 32, 5.194 ) ]
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("HitboxPivot:rotation_degrees")
+tracks/3/path = NodePath("PlayerHitbox/CollisionShape2D:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -258,19 +259,19 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 90.0 ]
+"values": [ Vector2( 2.60796, 1.14132 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("HitboxPivot/PlayerHitbox/CollisionShape2D:disabled")
+tracks/4/path = NodePath("PlayerHitbox/CollisionShape2D:rotation_degrees")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -508,8 +509,12 @@ start_node = "Idle"
 [sub_resource type="RectangleShape2D" id=37]
 extents = Vector2( 6.28465, 11.9026 )
 
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 13.0325, 18.6147 )
+
 [node name="Player" type="KinematicBody2D"]
 collision_layer = 2
+collision_mask = 17
 script = ExtResource( 13 )
 __meta__ = {
 "_edit_group_": true
@@ -519,7 +524,7 @@ __meta__ = {
 position = Vector2( -7.96752, 11.6889 )
 texture = ExtResource( 1 )
 hframes = 20
-frame = 12
+frame = 14
 __meta__ = {
 "_edit_group_": true
 }
@@ -550,18 +555,32 @@ parameters/Attack/blend_position = Vector2( 0, 1 )
 parameters/Idle/blend_position = Vector2( 0, 1 )
 parameters/Walk/blend_position = Vector2( 0, 1 )
 
-[node name="HitboxPivot" type="Position2D" parent="."]
-position = Vector2( 32, 5.194 )
+[node name="PlayerHitbox" parent="." instance=ExtResource( 14 )]
+position = Vector2( 27.8326, 3.25419 )
 rotation = 1.5708
-
-[node name="PlayerHitbox" parent="HitboxPivot" instance=ExtResource( 14 )]
-position = Vector2( -1.93979, 4.16738 )
+collision_layer = 4
 collision_mask = 8
 script = ExtResource( 2 )
+damage = 1
 
-[node name="CollisionShape2D" parent="HitboxPivot/PlayerHitbox" index="0"]
-position = Vector2( 1.93979, 1.47541 )
+[node name="CollisionShape2D" parent="PlayerHitbox" index="0"]
+position = Vector2( -26.7916, 26.3093 )
+rotation = 1.5708
 shape = SubResource( 37 )
 disabled = true
 
-[editable path="HitboxPivot/PlayerHitbox"]
+[node name="PickupManager" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="PickupDetector" type="Area2D" parent="PickupManager"]
+collision_layer = 0
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupManager/PickupDetector"]
+modulate = Color( 0.945098, 0.27451, 1, 1 )
+position = Vector2( -1.18921, 0 )
+shape = SubResource( 38 )
+
+[connection signal="area_entered" from="PickupManager/PickupDetector" to="PickupManager" method="_on_PickupDetector_area_entered"]
+
+[editable path="PlayerHitbox"]

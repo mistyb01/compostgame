@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/UI/dpcomic.regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://UI/Label.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 12
@@ -63,7 +64,7 @@ margin_bottom = 32.7307
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.313726, 0.101961, 0.937255, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
-text = "Number of compostable waste diverted from trash:"
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

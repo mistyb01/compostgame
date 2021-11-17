@@ -43,7 +43,15 @@ shape = SubResource( 3 )
 [node name="Stats" parent="." instance=ExtResource( 5 )]
 max_health = 3
 
+[node name="WalkTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="IdleTimer" type="Timer" parent="."]
+wait_time = 3.0
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="timeout" from="WalkTimer" to="." method="_on_WalkTimer_timeout"]
+[connection signal="timeout" from="IdleTimer" to="." method="_on_IdleTimer_timeout"]
 
 [editable path="Hurtbox"]
