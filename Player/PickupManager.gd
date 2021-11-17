@@ -7,8 +7,6 @@ func _ready():
 func _on_PickupDetector_area_entered(area : Area2D):
 	if area.is_in_group("compost"):
 		Global.items += 1
-	else:
-		Global.items = 0 
 	area.queue_free()
 
 

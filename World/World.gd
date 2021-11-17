@@ -4,15 +4,18 @@ export (PackedScene) var Enemy
 
 var items = 0
 
-func _on_EnemyTimer_timeout():
+func _ready():
+	$SpawnTimer.start()
+
+func _on_SpawnTimer_timeout():
 	# Choose a random location on Path2D.
-	$EnemyPath/EnemySpawnLocation.offset = randi()
+	$SpawnPath/SpawnPoint.offset = randi()
 	
 	var enemy = Enemy.instance()
 	add_child(enemy)
 	
-	var direction = $EnemyPath/EnemySpawnLocation.rotation + PI / 2
-	enemy.position = $EnemyPath/EnemySpawnLocation.position
-
-
+	enemy.position = $SpawnPath/SpawnPoint.position
+	var direction = $SpawnPath/SpawnPoint.rotation + PI / 2
+	enemy.linear_velocity = Vector2(rand_range(enemy.min_speed, enemy.max_speed), 0)
+	enemy.linear_velocity = enemy.linear_velocity.rotated(direction)
 

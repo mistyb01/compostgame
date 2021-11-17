@@ -561,7 +561,6 @@ rotation = 1.5708
 collision_layer = 4
 collision_mask = 8
 script = ExtResource( 2 )
-damage = 1
 
 [node name="CollisionShape2D" parent="PlayerHitbox" index="0"]
 position = Vector2( -26.7916, 26.3093 )
