@@ -54,8 +54,14 @@ position = Vector2( 342.355, 78.2817 )
 
 [node name="GoalHeader" parent="." instance=ExtResource( 5 )]
 
+[node name="max_point" type="Position2D" parent="."]
+position = Vector2( 192.565, 39.9425 )
+
+[node name="min_point" type="Position2D" parent="."]
+position = Vector2( 192.145, 312.814 )
+
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 4.0
+wait_time = 3.0
 
 [node name="SpawnPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
@@ -64,14 +70,8 @@ curve = SubResource( 1 )
 position = Vector2( 25.3757, 162.515 )
 rotation = -1.5708
 
-[node name="max_point" type="Position2D" parent="."]
-position = Vector2( 192.565, 39.9425 )
-
-[node name="min_point" type="Position2D" parent="."]
-position = Vector2( 192.145, 312.814 )
-
 [node name="SpawnTimer2" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.5
 
 [node name="SpawnPath2" type="Path2D" parent="."]
 curve = SubResource( 2 )
@@ -80,9 +80,5 @@ curve = SubResource( 2 )
 position = Vector2( 360.002, 163.341 )
 rotation = -1.62482
 
-[node name="SpawnDelay" type="Timer" parent="."]
-wait_time = 2.0
-
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="SpawnTimer2" to="." method="_on_SpawnTimer2_timeout"]
-[connection signal="timeout" from="SpawnDelay" to="." method="_on_SpawnDelay_timeout"]

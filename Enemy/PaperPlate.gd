@@ -2,6 +2,7 @@ extends Area2D
 
 var knockback = Vector2.ZERO
 var chocoItem = preload("res://Objects/Items/ChocoItem.tscn")
+var compostPopup = preload("res://UI/CompostPopup.tscn")
 
 var direction = Vector2.ZERO
 
@@ -34,7 +35,11 @@ func item_drop():
 	food.global_position = Vector2(global_position.x, global_position.y)
 	get_tree().get_root().call_deferred("add_child", food)
 
-
+func pop_up():
+	var popUp = compostPopup.instance()
+	popUp.global_position = Vector2(global_position.x, global_position.y)
+	get_tree().get_root().call_deferred("add_child", popUp)
+	
 func _on_ChangeDirection_timeout():
 	direction = position.direction_to(
 				lerp(max_point, min_point, randf()))
@@ -42,7 +47,9 @@ func _on_ChangeDirection_timeout():
 
 func _on_Stats_no_health():
 	queue_free()
-	item_drop()
+	pop_up()
+	#item_drop()
+	Global.items += 1
 	Global.enemyCount -= 1
 
 
