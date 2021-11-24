@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Objects/Table.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Enemy/PlasticBag.tscn" type="PackedScene" id=7]
 [ext_resource path="res://World/World.gd" type="Script" id=8]
 [ext_resource path="res://Enemy/PlasticPlate.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Enemy/Apple.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -22,7 +23,7 @@ _data = {
 
 [node name="World" type="Node2D"]
 script = ExtResource( 8 )
-Enemy = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ) ]
+Enemy = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ) ]
 
 [node name="YSort" type="YSort" parent="."]
 
@@ -39,18 +40,18 @@ __meta__ = {
 position = Vector2( 174.095, 116.657 )
 
 [node name="LitterPile" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 28.0767, 144.38 )
+position = Vector2( 28.0767, 165.402 )
 
 [node name="LitterPile2" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 357.861, 141.23 )
+position = Vector2( 358.281, 164.775 )
 
 [node name="Props" type="YSort" parent="YSort"]
 
 [node name="Table" parent="YSort/Props" instance=ExtResource( 1 )]
-position = Vector2( 46.9037, 75.6028 )
+position = Vector2( 45.6424, 81.0686 )
 
 [node name="Table2" parent="YSort/Props" instance=ExtResource( 1 )]
-position = Vector2( 342.355, 78.2817 )
+position = Vector2( 342.355, 80.8044 )
 
 [node name="GoalHeader" parent="." instance=ExtResource( 5 )]
 
@@ -64,6 +65,7 @@ position = Vector2( 192.145, 312.814 )
 wait_time = 3.0
 
 [node name="SpawnPath" type="Path2D" parent="."]
+position = Vector2( 0, 21.0224 )
 curve = SubResource( 1 )
 
 [node name="SpawnPoint" type="PathFollow2D" parent="SpawnPath"]
@@ -74,6 +76,7 @@ rotation = -1.5708
 wait_time = 3.5
 
 [node name="SpawnPath2" type="Path2D" parent="."]
+position = Vector2( 0.420471, 23.5451 )
 curve = SubResource( 2 )
 
 [node name="SpawnPoint2" type="PathFollow2D" parent="SpawnPath2"]
