@@ -21,9 +21,3 @@ func _on_SpawnTimer_timeout():
 	enemy.min_point = min_point
 	
 	add_child(enemy)
-	
-
-#	var direction = $SpawnPath/SpawnPoint.rotation + PI / 2
-#	enemy.linear_velocity = Vector2(rand_range(enemy.min_speed, enemy.max_speed), 0)
-#	enemy.linear_velocity = enemy.linear_velocity.rotated(direction)
-
