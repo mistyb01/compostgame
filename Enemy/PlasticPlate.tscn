@@ -1,58 +1,54 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Enemy/PlasticBag.gd" type="Script" id=1]
-[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Enemy/Stats.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Enemy/plasticbag.png" type="Texture" id=4]
+[ext_resource path="res://Enemy/PlasticPlate.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Enemy/plasticplate.png" type="Texture" id=2]
+[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy/Stats.tscn" type="PackedScene" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 52, 44 )
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 46, 41 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 4 )
-region = Rect2( 52, 0, 52, 44 )
+atlas = ExtResource( 2 )
+region = Rect2( 46, 0, 46, 41 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "default",
-"speed": 2.0
+"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=4]
-radius = 11.6751
-height = 11.3626
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 13.3183, 6.08795 )
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 20.9241
-height = 0.802582
+radius = 17.8448
+height = 4.32554
 
-[node name="PlasticBag" type="Area2D"]
+[node name="PlasticPlate" type="Area2D"]
 collision_layer = 16
 collision_mask = 3
 script = ExtResource( 1 )
-max_speed = 30
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+rotation = -0.0129465
 frames = SubResource( 3 )
-playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 2.3784, 8.32445 )
-rotation = 1.5708
+position = Vector2( -0.297295, 11.1488 )
 shape = SubResource( 4 )
 
-[node name="Hurtbox" parent="." instance=ExtResource( 2 )]
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
 collision_layer = 8
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
-position = Vector2( -0.891914, 4.75683 )
+rotation = 1.5708
 shape = SubResource( 5 )
 
-[node name="Stats" parent="." instance=ExtResource( 3 )]
-max_health = 2
+[node name="Stats" parent="." instance=ExtResource( 4 )]
 
 [node name="ChangeDirection" type="Timer" parent="."]
 wait_time = 3.0

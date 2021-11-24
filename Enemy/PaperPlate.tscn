@@ -32,6 +32,7 @@ height = 0.0
 collision_layer = 16
 collision_mask = 3
 script = ExtResource( 3 )
+max_speed = 50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
@@ -43,12 +44,12 @@ position = Vector2( 0, 12.3612 )
 shape = SubResource( 4 )
 
 [node name="Stats" parent="." instance=ExtResource( 2 )]
-max_health = 9
 
 [node name="ChangeDirection" type="Timer" parent="."]
 autostart = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 4 )]
+collision_layer = 8
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
 position = Vector2( 0, 2.00452 )

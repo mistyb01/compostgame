@@ -12,26 +12,28 @@ func _ready():
 	$SpawnTimer2.start()
 
 func _on_SpawnTimer_timeout():
-	# Choose a random location on Path2D.
-	$SpawnPath/SpawnPoint.offset = randi()
-	
-	var enemy = Enemy[int(randf() * Enemy.size())].instance()
-	
-	enemy.position = $SpawnPath/SpawnPoint.position
-	enemy.max_point = max_point
-	enemy.min_point = min_point
-	
-	add_child(enemy)
+	if Global.enemyCount < 6:
+		# Choose a random location on Path2D.
+		$SpawnPath/SpawnPoint.offset = randi()
+		
+		var enemy = Enemy[int(randf() * Enemy.size())].instance()
+		
+		enemy.position = $SpawnPath/SpawnPoint.position
+		enemy.max_point = max_point
+		enemy.min_point = min_point
+		Global.enemyCount += 1
+		add_child(enemy)
 
 
 func _on_SpawnTimer2_timeout():
-	$SpawnPath2/SpawnPoint2.offset = randi()
-	
-	var enemy = Enemy[int(randf() * Enemy.size())].instance()
-	
-	enemy.position = $SpawnPath2/SpawnPoint2.position
-	enemy.max_point = max_point
-	enemy.min_point = min_point
-	
-	add_child(enemy)
+	if Global.enemyCount < 6:
+		$SpawnPath2/SpawnPoint2.offset = randi()
+		
+		var enemy = Enemy[int(randf() * Enemy.size())].instance()
+		
+		enemy.position = $SpawnPath2/SpawnPoint2.position
+		enemy.max_point = max_point
+		enemy.min_point = min_point
+		Global.enemyCount += 1
+		add_child(enemy)
 

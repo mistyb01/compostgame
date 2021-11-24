@@ -24,6 +24,7 @@ func _physics_process(delta):
 	
 	if position.y < max_point.y || position.y > min_point.y:
 		queue_free()
+		Global.enemyCount -= 1
 
 func item_drop():
 	var food = chocoItem.instance()
@@ -39,6 +40,7 @@ func _on_Hurtbox_area_entered(area):
 func _on_Stats_no_health():
 	queue_free()
 	item_drop()
+	Global.enemyCount -= 1
 
 func _on_ChangeDirection_timeout():
 	direction = position.direction_to(

@@ -42,7 +42,6 @@ collision_layer = 8
 shape = SubResource( 3 )
 
 [node name="Stats" parent="." instance=ExtResource( 5 )]
-max_health = 3
 
 [node name="ChangeDirection" type="Timer" parent="."]
 wait_time = 3.0
