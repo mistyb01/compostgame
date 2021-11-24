@@ -20,7 +20,7 @@ func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 	position += direction * delta * max_speed
 	
-	if position.x > max_point.x:
+	if position.y < max_point.y || position.y > min_point.y:
 		queue_free()
 
 func _on_Hurtbox_area_entered(area):

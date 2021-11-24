@@ -28,6 +28,7 @@ script = ExtResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "choco"
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -44,6 +45,7 @@ shape = SubResource( 3 )
 max_health = 3
 
 [node name="ChangeDirection" type="Timer" parent="."]
+wait_time = 3.0
 autostart = true
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]

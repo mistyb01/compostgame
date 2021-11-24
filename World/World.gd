@@ -9,6 +9,7 @@ onready var min_point = $min_point.position
 
 func _ready():
 	$SpawnTimer.start()
+	$SpawnTimer2.start()
 
 func _on_SpawnTimer_timeout():
 	# Choose a random location on Path2D.
@@ -21,3 +22,16 @@ func _on_SpawnTimer_timeout():
 	enemy.min_point = min_point
 	
 	add_child(enemy)
+
+
+func _on_SpawnTimer2_timeout():
+	$SpawnPath2/SpawnPoint2.offset = randi()
+	
+	var enemy = Enemy[int(randf() * Enemy.size())].instance()
+	
+	enemy.position = $SpawnPath2/SpawnPoint2.position
+	enemy.max_point = max_point
+	enemy.min_point = min_point
+	
+	add_child(enemy)
+

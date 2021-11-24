@@ -22,7 +22,7 @@ func _physics_process(delta):
 	#knockback = move_and_slide(knockback)
 	position += direction * delta * max_speed
 	
-	if position.x > max_point.x:
+	if position.y < max_point.y || position.y > min_point.y:
 		queue_free()
 
 func item_drop():
