@@ -36,6 +36,7 @@ max_speed = 50
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -43,9 +44,6 @@ position = Vector2( 0, 12.3612 )
 shape = SubResource( 4 )
 
 [node name="Stats" parent="." instance=ExtResource( 2 )]
-
-[node name="ChangeDirection" type="Timer" parent="."]
-autostart = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 4 )]
 collision_layer = 8
@@ -55,5 +53,4 @@ position = Vector2( 0, 2.00452 )
 shape = SubResource( 5 )
 
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
-[connection signal="timeout" from="ChangeDirection" to="." method="_on_ChangeDirection_timeout"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
