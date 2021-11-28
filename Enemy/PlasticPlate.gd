@@ -12,6 +12,8 @@ export var max_speed = 80
 
 onready var stats = $Stats
 
+var notCompostPopup = preload("res://UI/NotCompostPopup.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	direction = position.direction_to(
@@ -39,4 +41,11 @@ func _on_Hurtbox_area_entered(area):
 
 func _on_Stats_no_health():
 	queue_free()
+	pop_up()
 	Global.enemyCount -= 1
+	
+	
+func pop_up():
+	var popUp = notCompostPopup.instance()
+	popUp.global_position = Vector2(global_position.x, global_position.y)
+	get_tree().get_root().call_deferred("add_child", popUp)
