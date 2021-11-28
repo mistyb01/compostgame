@@ -523,7 +523,7 @@ __meta__ = {
 position = Vector2( -7.96752, 11.6889 )
 texture = ExtResource( 1 )
 hframes = 20
-frame = 13
+frame = 10
 __meta__ = {
 "_edit_group_": true
 }
@@ -549,10 +549,11 @@ anims/WalkRight = SubResource( 13 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 35 )
 anim_player = NodePath("../AnimationPlayer")
+active = true
 parameters/playback = SubResource( 36 )
 parameters/Attack/blend_position = Vector2( 0, 1 )
 parameters/Idle/blend_position = Vector2( 0, 1 )
-parameters/Walk/blend_position = Vector2( 0, 1 )
+parameters/Walk/blend_position = Vector2( -0.217778, -0.433476 )
 
 [node name="PlayerHitbox" parent="." instance=ExtResource( 14 )]
 position = Vector2( 27.8326, 3.25419 )

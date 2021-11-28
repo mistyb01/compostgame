@@ -33,6 +33,7 @@ func _on_Stats_no_health():
 	queue_free()
 	Global.enemyCount -= 1
 
-func _on_ChangeDirection_timeout():
-	direction = position.direction_to(
-				lerp(max_point, min_point, randf()))
+
+#func _on_ChangeDirection_timeout():
+#	direction = position.direction_to(
+#				lerp(max_point, min_point, randf()))
