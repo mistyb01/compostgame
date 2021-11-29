@@ -1,56 +1,57 @@
 [gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Enemy/PlasticPlate.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Enemy/plasticplate.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Enemy/pizza.png" type="Texture" id=1]
+[ext_resource path="res://Enemy/Pizza.gd" type="Script" id=2]
 [ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemy/Stats.tscn" type="PackedScene" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 46, 41 )
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 55, 40 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 2 )
-region = Rect2( 46, 0, 46, 41 )
+atlas = ExtResource( 1 )
+region = Rect2( 55, 0, 55, 40 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
+"speed": 3.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 13.3183, 6.08795 )
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 10.4985
+height = 29.7967
 
 [sub_resource type="CapsuleShape2D" id=5]
-radius = 17.8448
-height = 4.32554
+radius = 24.556
+height = 0.0
 
-[node name="PlasticPlate" type="Area2D"]
+[node name="Area2D" type="Area2D"]
 collision_layer = 16
 collision_mask = 3
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-rotation = -0.0129465
 frames = SubResource( 3 )
 frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -0.297295, 11.1488 )
+position = Vector2( 0, 9.24986 )
+rotation = 1.5708
 shape = SubResource( 4 )
+
+[node name="Stats" parent="." instance=ExtResource( 4 )]
 
 [node name="Hurtbox" parent="." instance=ExtResource( 3 )]
 collision_layer = 8
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox"]
-rotation = 1.5708
+position = Vector2( -0.420441, 3.57381 )
 shape = SubResource( 5 )
 
-[node name="Stats" parent="." instance=ExtResource( 4 )]
-
-[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
