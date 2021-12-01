@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://UI/PlayerHearts.gd" type="Script" id=1]
+[ext_resource path="res://Assets/UI/heart.png" type="Texture" id=2]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="1" type="TextureRect" parent="."]
+margin_right = 20.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="2" type="TextureRect" parent="."]
+margin_left = 25.0
+margin_right = 45.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+stretch_mode = 3
+
+[node name="3" type="TextureRect" parent="."]
+margin_left = 50.0
+margin_right = 70.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+stretch_mode = 3

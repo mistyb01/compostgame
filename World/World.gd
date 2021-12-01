@@ -3,13 +3,17 @@ extends Node2D
 export (Array, PackedScene) var Enemy
 
 var items = 0
+var timeProgress = 0
 onready var max_point = $max_point.position
 onready var min_point = $min_point.position
-
 
 func _ready():
 	$SpawnTimer.start()
 	$SpawnTimer2.start()
+	Global.playerHealth = 3
+
+func _process(delta):
+	timeProgress += 0.05
 
 func _on_SpawnTimer_timeout():
 	if Global.enemyCount < 6:

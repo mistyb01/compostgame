@@ -28,7 +28,10 @@ func pop_up():
 	var popUp = notCompostPopup.instance()
 	popUp.global_position = Vector2(global_position.x, global_position.y)
 	get_tree().get_root().call_deferred("add_child", popUp)
-
+	#decrease playerHealth global 
+	Global.playerHealth -= 1
+	
+	
 #func _on_ChangeDirection_timeout():
 #	direction = position.direction_to(
 #				lerp(max_point, min_point, randf()))
