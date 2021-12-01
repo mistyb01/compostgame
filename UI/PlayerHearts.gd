@@ -1,5 +1,6 @@
 extends HBoxContainer
 
+
 enum MODES {simple}
 
 var heart_full = preload("res://Assets/UI/heart.png")

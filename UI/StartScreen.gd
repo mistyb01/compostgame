@@ -1,5 +1,6 @@
-extends Control
+extends CanvasLayer
 
+signal start_game
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -16,5 +17,10 @@ func _ready():
 #	pass
 
 
-func _on_Timer_timeout():
-	$ProgressBar.value+=1
+func _on_Button_pressed():
+	$TextureRect.hide()
+	$Label.hide()
+	$Button.hide()
+	emit_signal("start_game")
+	
+	
