@@ -28,7 +28,9 @@ extents = Vector2( 13.3183, 6.08795 )
 radius = 17.8448
 height = 4.32554
 
-[node name="PlasticPlate" type="Area2D"]
+[node name="PlasticPlate" type="Area2D" groups=[
+"enemy",
+]]
 collision_layer = 16
 collision_mask = 3
 script = ExtResource( 1 )

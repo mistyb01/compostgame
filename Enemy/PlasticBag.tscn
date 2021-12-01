@@ -29,7 +29,9 @@ height = 11.3626
 radius = 20.9241
 height = 0.802582
 
-[node name="PlasticBag" type="Area2D"]
+[node name="PlasticBag" type="Area2D" groups=[
+"enemy",
+]]
 collision_layer = 16
 collision_mask = 3
 script = ExtResource( 1 )
@@ -37,6 +39,7 @@ max_speed = 30
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

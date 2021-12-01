@@ -29,14 +29,15 @@ height = 29.7967
 radius = 24.556
 height = 0.0
 
-[node name="Area2D" type="Area2D"]
+[node name="Area2D" type="Area2D" groups=[
+"enemy",
+]]
 collision_layer = 16
 collision_mask = 3
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 3 )
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -2,7 +2,6 @@ extends Node2D
 
 export (Array, PackedScene) var Enemy
 
-var items = 0
 var gameStarted = false
 
 onready var max_point = $max_point.position
@@ -18,13 +17,15 @@ func new_game():
 	$GoalHeader/ProgressBarTimer.start()
 	$GoalHeader/ProgressBar.value = 0
 	$GoalHeader/HBoxContainer.show()
+	#get_tree().call_group("enemy", "queue_free")
 	Global.items = 0
 	Global.playerHealth = 3
 	gameStarted = true
 	
 func _process(delta):
-	if gameStarted && Global.playerHealth == 0:
+	if gameStarted && (Global.playerHealth == 0 || $GoalHeader/ProgressBar.value == 100):
 		$GoalHeader/ProgressBar.value = 0
+		$GameOver/Control/GameOverText.text = "You diverted " + String(Global.items) + " compostable items from the landfill!"
 		$GameOver/Control.show()
 
 func _on_SpawnTimer_timeout():

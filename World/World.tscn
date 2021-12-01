@@ -140,14 +140,14 @@ curve = SubResource( 2 )
 position = Vector2( 360.002, 163.341 )
 rotation = -1.62477
 
-[node name="StartScreen" parent="." instance=ExtResource( 17 )]
-
 [node name="GameOver" parent="." instance=ExtResource( 19 )]
+
+[node name="StartScreen" parent="." instance=ExtResource( 17 )]
 
 [connection signal="timeout" from="GoalHeader/ProgressBarTimer" to="." method="_on_ProgressBarTimer_timeout"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_SpawnTimer_timeout"]
 [connection signal="timeout" from="SpawnTimer2" to="." method="_on_SpawnTimer2_timeout"]
-[connection signal="start_game" from="StartScreen" to="." method="new_game"]
 [connection signal="start_game" from="GameOver" to="." method="new_game"]
+[connection signal="start_game" from="StartScreen" to="." method="new_game"]
 
 [editable path="GameOver"]
