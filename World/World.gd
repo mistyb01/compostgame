@@ -29,7 +29,7 @@ func _process(delta):
 		$GameOver/Control.show()
 
 func _on_SpawnTimer_timeout():
-	if Global.enemyCount < 6:
+	if Global.enemyCount < 10:
 		# Choose a random location on Path2D.
 		$SpawnPath/SpawnPoint.offset = randi()
 		
@@ -39,11 +39,11 @@ func _on_SpawnTimer_timeout():
 		enemy.max_point = max_point
 		enemy.min_point = min_point
 		Global.enemyCount += 1
-		add_child(enemy)
+		$YSort.add_child(enemy)
 
 
 func _on_SpawnTimer2_timeout():
-	if Global.enemyCount < 6:
+	if Global.enemyCount < 10:
 		$SpawnPath2/SpawnPoint2.offset = randi()
 		
 		var enemy = Enemy[int(randf() * Enemy.size())].instance()
@@ -52,7 +52,7 @@ func _on_SpawnTimer2_timeout():
 		enemy.max_point = max_point
 		enemy.min_point = min_point
 		Global.enemyCount += 1
-		add_child(enemy)
+		$YSort.add_child(enemy)
 
 
 
