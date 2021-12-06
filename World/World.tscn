@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Objects/Table.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://UI/StartScreen.tscn" type="PackedScene" id=17]
 [ext_resource path="res://UI/Label.gd" type="Script" id=18]
 [ext_resource path="res://UI/GameOver.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Enemy/Burger.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Enemy/ChocoWrapper.tscn" type="PackedScene" id=21]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.392157, 0.494118, 1 )
@@ -42,7 +44,7 @@ _data = {
 
 [node name="World" type="Node2D"]
 script = ExtResource( 8 )
-Enemy = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ]
+Enemy = [ ExtResource( 4 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 20 ), ExtResource( 21 ) ]
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 192.565, 176.168 )
