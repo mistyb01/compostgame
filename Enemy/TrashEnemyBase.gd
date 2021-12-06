@@ -23,13 +23,17 @@ func _physics_process(delta):
 	if position.y < max_point.y || position.y > min_point.y:
 		queue_free()
 		Global.enemyCount -= 1
+	
+	if direction.x < 0:
+		$AnimatedSprite.flip_h = true
+
 
 func pop_up():
 	var popUp = notCompostPopup.instance()
 	popUp.global_position = Vector2(global_position.x, global_position.y)
 	get_tree().get_root().call_deferred("add_child", popUp)
 	Global.playerHealth -= 1
-	
+	print(Global.playerHealth)
 	
 #func _on_ChangeDirection_timeout():
 #	direction = position.direction_to(

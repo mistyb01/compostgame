@@ -29,7 +29,6 @@ func game_over():
 	$GoalHeader/ProgressBar.value = 0
 	
 	# High score update:
-	
 	if Global.items > Global.hiScore:
 		Global.hiScore = Global.items
 	

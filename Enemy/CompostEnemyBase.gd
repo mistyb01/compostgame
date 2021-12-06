@@ -14,7 +14,7 @@ export var max_speed = 80
 func _ready():
 	direction = position.direction_to(
 				lerp(max_point, min_point, randf()))
-	
+
 func _physics_process(delta):
 	knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
 	#knockback = move_and_slide(knockback)
@@ -23,6 +23,9 @@ func _physics_process(delta):
 	if position.y < max_point.y || position.y > min_point.y:
 		queue_free()
 		Global.enemyCount -= 1
+	
+	if direction.x > 0:
+		$AnimatedSprite.flip_h = true
 
 func pop_up():
 	var popUp = compostPopup.instance()
