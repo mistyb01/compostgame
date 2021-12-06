@@ -6,24 +6,24 @@
 [ext_resource path="res://Assets/UI/popup.png" type="Texture" id=5]
 [ext_resource path="res://UI/GameOver.gd" type="Script" id=6]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 24
 outline_size = 1
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 outline_size = 1
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxTexture" id=1]
+[sub_resource type="StyleBoxTexture" id=3]
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 42, 10 )
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=4]
 texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 42, 10 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 14
 outline_size = 1
 outline_color = Color( 0.764706, 0.733333, 0.788235, 1 )
@@ -60,7 +60,7 @@ margin_top = 86.8636
 margin_right = 294.905
 margin_bottom = 101.364
 rect_pivot_offset = Vector2( 73.9172, 0 )
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0117647, 0.247059, 0, 1 )
 text = "Game Over"
 align = 1
@@ -79,7 +79,7 @@ margin_top = 120.499
 margin_right = 293.223
 margin_bottom = 165.999
 rect_pivot_offset = Vector2( 73.9172, 0 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0117647, 0.247059, 0, 1 )
 text = "You were able to divert x items from the landfill!
 "
@@ -99,7 +99,7 @@ margin_top = 175.578
 margin_right = 294.485
 margin_bottom = 202.078
 rect_pivot_offset = Vector2( 73.9172, 0 )
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0117647, 0.247059, 0, 1 )
 text = "High Score:
 "
@@ -118,9 +118,9 @@ margin_left = 130.315
 margin_top = 180.021
 margin_right = 223.081
 margin_bottom = 200.021
-custom_styles/hover = SubResource( 1 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.12549, 0.0666667, 0.270588, 1 )
 text = "Play again"
 __meta__ = {
@@ -136,9 +136,9 @@ margin_left = 128.735
 margin_top = 205.18
 margin_right = 225.502
 margin_bottom = 225.18
-custom_styles/hover = SubResource( 1 )
-custom_styles/normal = SubResource( 2 )
-custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.12549, 0.0666667, 0.270588, 1 )
 text = "Back to menu"
 __meta__ = {

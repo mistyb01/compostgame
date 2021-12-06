@@ -17,16 +17,30 @@ func new_game():
 	$GoalHeader/ProgressBarTimer.start()
 	$GoalHeader/ProgressBar.value = 0
 	$GoalHeader/HBoxContainer.show()
-	#get_tree().call_group("enemy", "queue_free")
 	Global.items = 0
 	Global.playerHealth = 3
 	gameStarted = true
 	
+func game_over():
+	$SpawnTimer.stop()
+	$SpawnTimer2.stop()
+	get_tree().call_group("enemy", "queue_free")
+	Global.enemyCount = 0
+	$GoalHeader/ProgressBar.value = 0
+	
+	# High score update:
+	
+	if Global.items > Global.hiScore:
+		Global.hiScore = Global.items
+	
+	# UI updates:
+	$GameOver/Control/GameOverText.text = "You diverted " + String(Global.items) + " compostable items from the landfill!"
+	$GameOver/Control/HighScoreText.text = "High Score: " + String(Global.hiScore)
+	$GameOver/Control.show()
+
 func _process(delta):
 	if gameStarted && (Global.playerHealth == 0 || $GoalHeader/ProgressBar.value == 100):
-		$GoalHeader/ProgressBar.value = 0
-		$GameOver/Control/GameOverText.text = "You diverted " + String(Global.items) + " compostable items from the landfill!"
-		$GameOver/Control.show()
+		game_over()
 
 func _on_SpawnTimer_timeout():
 	if Global.enemyCount < 10:

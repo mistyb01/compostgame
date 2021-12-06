@@ -20,22 +20,22 @@
 [ext_resource path="res://UI/Label.gd" type="Script" id=18]
 [ext_resource path="res://UI/GameOver.tscn" type="PackedScene" id=19]
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0.392157, 0.494118, 1 )
 
-[sub_resource type="StyleBoxFlat" id=4]
+[sub_resource type="StyleBoxFlat" id=2]
 bg_color = Color( 0.815686, 0.890196, 0.384314, 1 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=3]
 size = 12
 font_data = ExtResource( 16 )
 
-[sub_resource type="Curve2D" id=1]
+[sub_resource type="Curve2D" id=4]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 25.3757, 162.515, 0, 0, 0, 0, 25.3757, 144.561 )
 }
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id=5]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, 360.002, 163.341, 0, 0, 0, 0, 358.741, 140.007 )
 }
@@ -91,8 +91,8 @@ margin_top = 17.0
 margin_right = 385.0
 margin_bottom = 31.0
 rect_min_size = Vector2( 200, 14 )
-custom_styles/fg = SubResource( 3 )
-custom_styles/bg = SubResource( 4 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
 percent_visible = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -105,7 +105,7 @@ margin_left = 99.5953
 margin_top = 18.5946
 margin_right = 280.595
 margin_bottom = 32.5946
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.313726, 0.101961, 0.937255, 1 )
 text = "Compostable items diverted from landfill:"
 script = ExtResource( 18 )
@@ -123,7 +123,7 @@ position = Vector2( 192.145, 312.814 )
 
 [node name="SpawnPath" type="Path2D" parent="."]
 position = Vector2( 0, 21.0224 )
-curve = SubResource( 1 )
+curve = SubResource( 4 )
 
 [node name="SpawnPoint" type="PathFollow2D" parent="SpawnPath"]
 position = Vector2( 25.3757, 162.515 )
@@ -134,7 +134,7 @@ wait_time = 1.5
 
 [node name="SpawnPath2" type="Path2D" parent="."]
 position = Vector2( 0.420471, 23.5451 )
-curve = SubResource( 2 )
+curve = SubResource( 5 )
 
 [node name="SpawnPoint2" type="PathFollow2D" parent="SpawnPath2"]
 position = Vector2( 360.002, 163.341 )

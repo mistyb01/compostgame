@@ -10,4 +10,3 @@ func _on_Stats_no_health():
 	queue_free()
 	pop_up()
 	Global.enemyCount -= 1
-
